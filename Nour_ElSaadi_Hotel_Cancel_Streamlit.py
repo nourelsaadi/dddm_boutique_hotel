@@ -204,7 +204,7 @@ if choose == "Will They Cancel?":
          #define a function that predicts whether the customer with inserted booking details (in the sidebar) will cancel or not
          @st.cache(persist=True)
          def predict_cancel(hotel,lead_time,adr,total_of_special_requests,booking_changes,market_segment,deposit_type,assigned_room_type,customer_type,required_car_parking_spaces,previous_cancellations):
-            input=np.array([[lead_time,adr,total_of_special_requests,booking_changes,market_segment,deposit_type,assigned_room_type,customer_type,required_car_parking_spaces,previous_cancellations]])
+            input=np.array([[hotel,lead_time,adr,total_of_special_requests,booking_changes,market_segment,deposit_type,assigned_room_type,customer_type,required_car_parking_spaces,previous_cancellations]])
             prediction=rf_model.predict_proba(input)
             pred='{0:.{1}f}'.format(prediction[0][0], 2)
             return float(pred)
