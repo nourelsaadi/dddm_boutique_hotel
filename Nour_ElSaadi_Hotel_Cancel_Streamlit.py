@@ -196,12 +196,10 @@ if choose == "Will They Cancel?":
          chosen=['hotel','lead_time','adr','total_of_special_requests','booking_changes','market_segment','deposit_type','assigned_room_type','customer_type','required_car_parking_spaces','previous_cancellations']
          X = df1[chosen]
          y = df1['is_canceled']
- 
-         X_train,X_test,y_train,y_test = train_test_split(X,y,random_state = 42,stratify = y,test_size = 0.30)
          
          #the RandomForestClassifier was chosen after trials with other models proved that the RFC gave off the highest accuracy 
          rf_model = RandomForestClassifier(random_state =42)
-         rf_model.fit(X_train,y_train)
+         rf_model.fit(X,y)
 
          #define a function that predicts whether the customer with inserted booking details (in the sidebar) will cancel or not
          @st.cache(persist=True)
