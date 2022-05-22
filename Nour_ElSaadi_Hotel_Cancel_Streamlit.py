@@ -210,8 +210,8 @@ if choose == "Will They Cancel?":
             return float(pred)
 
          #Creating the sidebar where booking details/parameters can be inserted to be used for prediction
-         st.sidebar.text("Insert customer's booking details?")
-         st.sidebar.markdown("#### Hotel")
+         st.sidebar.text("Insert customer's booking details")
+         st.sidebar.markdown("#### Hotel Branch")
          hotel = st.sidebar.selectbox("Choose the Branch",[0,1])
          st.sidebar.info("0 : Resort Hotel, 1 : City Hotel")
          st.sidebar.markdown("#### Lead Time")
